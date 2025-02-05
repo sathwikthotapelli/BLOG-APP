@@ -1,0 +1,51 @@
+###user api request
+###user registration
+POST http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"sathwik",
+    "password":"sathwik",
+    "email":"sathwik@email.com"
+
+}
+
+
+###user login request
+POST http://localhost:4000/user-api/login
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"sathwik",
+    "password":"sathwik"
+
+}
+
+
+
+###view the articles by user request
+GET http://localhost:4000/user-api/articles
+
+
+
+
+###write the comment by user
+POST  http://localhost:4000/user-api/comment/1737749723
+Content-Type: application/json
+
+{
+
+    "username":"ruthwik",
+    "comment":"the best article i thougth was only this amazaing"
+
+}
+
+
+
+
+
+
+###admin api request
+GET  http://localhost:4000/admin-api/test-admin

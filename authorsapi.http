@@ -1,0 +1,89 @@
+###author api request for register
+POST http://localhost:4000/author-api/user
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "username":"ruthwik",
+    "password":"ruthwik",
+    "email":"ruthwik@email.com"
+
+}
+
+
+###authors login request
+POST http://localhost:4000/author-api/login
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "username":"ruthwik",
+    "password":"ruthwik"
+
+}
+
+
+
+###add articles by author
+POST http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"{{$timestamp}}",
+    "title":"Fundamentals of java script",
+    "category":"programming",
+    "content":"JavaScript makes HTML pages more dynamic and interactive. The HTML <script> tag is used to define a client-side script (JavaScript). The <script> element either contains script statements, or it points to an external script file through the src attribute.",
+    "dateofCreation":"{{$datetime iso8601}}",
+    "dateofModification":"{{$datetime iso8601}}",
+    "username":"ruthwik",
+    "comments": [ ],
+    "status":true
+
+}
+
+
+
+
+###updating the articles   the updating items required are {content,dateofModification}
+PUT http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"1737749723",
+    "title":"Fundamentals of java script",
+    "category":"programming",
+    "content":"The HTML <script> tag is used to define a client-side script (JavaScript). ifeglig2liowau.kgdsfb/owruld the src attribute",
+    "dateofCreation":"2025-01-24T20:15:23.444Z",
+    "dateofModification":"{{$datetime iso8601}}",
+    "username":"ruthwik",
+    "comments": [ ],
+    "status":true
+
+}
+
+
+
+###delete the article by where status is true if false it means no article exist deleting by using article id
+###it is also konwn as soft delete
+PUT http://localhost:4000/author-api/article/1737749723
+Content-Type: application/json
+
+{
+    "articleId":"1737749723",
+    "title":"Fundamentals of java script",
+    "category":"programming",
+    "content":"The HTML <script> tag is used to define a client-side script (JavaScript). ifeglig2liowau.kgdsfb/owruld the src attribute",
+    "dateofCreation":"2025-01-24T20:15:23.444Z",
+    "dateofModification":"{{$datetime iso8601}}",
+    "username":"ruthwik",
+    "comments": [ ],
+    "status":true
+
+}
+
+
+
+
+
+###view the articles by author
+GET http://localhost:4000/author-api/articles/ruthwik
